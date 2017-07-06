@@ -59,8 +59,8 @@ var clientPayload = program.client_payload || 0;
 var serverPayload = program.server_payload || 0
 var outstandingRpcsPerChannel = program.outstanding_rpcs || 10;
 
-var warmupDuration = program.warmup_duration || SIXTY_SECONDS;
-var benchmarkDuration = program.profile ? SIXTY_SECONDS : (program.duration || TEN_MINUTES);
+var warmupDuration = program.warmup_duration * 1000 || SIXTY_SECONDS;
+var benchmarkDuration = program.profile ? SIXTY_SECONDS : (program.duration * 1000 || TEN_MINUTES);
 
 var profileOutputFile = program.profile;
 var histogramOutputFile = program.save_histogram || 'histogram.txt';
